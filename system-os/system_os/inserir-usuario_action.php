@@ -11,6 +11,6 @@ $query = "INSERT INTO usuarios VALUES (Null, '$cpf','$nome','$email','$senha')";
 // como a função executar_sql($query) tem return é necessario atribuir a uma variavel o resultado
 
 $resposta = executar_sql($query);
-echo $resposta
-//header("Location:frmLogin.php");
+header("Location:frmLogin.php");
+exit();
 ?>

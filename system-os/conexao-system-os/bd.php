@@ -43,4 +43,15 @@
         exit();
         }
     }
+
+    function select_sql($query){
+        $result_sql = executar_sql($query);
+        if($result_sql){
+            while($row = mysqli_fetch_array($result_sql, MYSQLI_ASSOC)){
+                $dados[] = $row;
+            }
+            mysqli_free_result($result_sql);
+        }
+        return($dados);
+    }
 ?>

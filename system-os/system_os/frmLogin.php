@@ -1,4 +1,7 @@
-<?php $titulo = 'System OS | Login' ?>
+<?php 
+    $titulo = 'System OS | Login'; 
+    $erro = isset($_GET['erro'])?$_GET['erro']:'';
+?>
 <!-- Cabeçalho -->
 <?php include_once './partials/head.php' ?>
 <!-- NavBar -->
@@ -12,7 +15,7 @@
         </div>
         <div class="card-body">
             <div class="container-fluid">
-                <form name="formClientes" id="formClientes">
+                <form name="formClientes" action="valida_login.php" method="POST" id="formClientes">
 
                     <div class="form-row align-self-center text-justify no-gutters">
                         <label for="nome">E-mail</label>
@@ -28,10 +31,17 @@
                                 placeholder="Insira sua senha" required="required" minlength="5" />
                         </div>
                     </div>
-
+                    
                     <!--Card Footer-->
                     <div class="card-footer container-fluid">
                         <div class="row"> <!--Linha dos botões-->
+
+                        <?php
+                            if(isset($_GET['erro'])){
+                                echo '<div class="alert alert-danger">'.$erro.'</div>';
+                            };
+                        ?>
+
                             <div class="col-4"></div>
                             <div class="col-4"><!--Botão1-->
                                 <button name="login" id="login" class="btn btn-success form-control">Login</button>

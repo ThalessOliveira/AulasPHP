@@ -1,5 +1,8 @@
 
-<?php $titulo='System OS | Area Exclusiva' ?>
+<?php 
+    $titulo='System OS | Area Exclusiva'; 
+    include_once './valida.php';
+?>
 <!-- Cabeçalho -->
 <?php include_once './partials/head.php' ?>
 <!-- NavBar -->
@@ -16,13 +19,13 @@
                     <div class="card-body my-auto">
                         <div class="row">
                             <div class="col-6 d-flex justify-content-center">
-                                <a href="./frmOrdemServico.php?id_usuario=<?= $id_usuario;?>">
+                                <a href="./frmOrdemServico.php<?=$paramAuth?>">
                                     <img src="./img/novaOrdemServico.png" width="100" height="100" alt="Nova Ordem de Serviço">
                                     <h6 class="display-7">Nova O.S.</h6>
                                 </a>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
-                                <a href="consultarOS.php?id_usuario=<?= $id_usuario;?>">
+                                <a href="consultarOS.php<?=$paramAuth?>">
                                     <img src="./img/consultarOrdensServico.png" width="100" height="100" alt="Consultar Ordens de Serviço">
                                     <h6 class="display-7">Consultar O.S.</h6>
                                 </a>
