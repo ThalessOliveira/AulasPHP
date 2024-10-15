@@ -1,0 +1,10 @@
+CREATE DATABASE testecrud;
+
+USE testecrud;
+
+CREATE TABLE usuarios (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(255),
+	email VARCHAR(255) UNIQUE,
+	senha_hash VARCHAR(255)
+);
